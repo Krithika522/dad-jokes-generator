@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/dad.css">
+    <title>Dad Jokes</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Want to impress with your dad jokes 😜</h1>
+    
+        <form action="/" id="form" class="form" method="POST">
+            <button type="submit" class="form-submit">press the button</button>
+        </form>
+        <section id="cards" class="cards">
+            <article class="card-item">
+                <% if(locals.data){  %>
+
+                <h2 class="card-activity">
+                   <%= data.body[0].setup %>
+                </h2>
+                <div class="card-info">
+                    <span class="card-type">
+                        <!-- Show Activity type -->
+                        <p>punchline: <%= data.body[0].punchline %></p>
+                    </span>
+                </div>
+             <% } %>
+            </article>
+    
+    
+            <div id="tag-error" class="tag-error">
+                <!-- Show any errors that were sent from the backend -->
+            </div>
+    
+        </section>
+    </div>
+</body>
+</html>
